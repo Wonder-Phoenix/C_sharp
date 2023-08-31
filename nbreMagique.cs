@@ -1,16 +1,11 @@
-﻿using System;
+// Jeu où l'utilisateur doit trouver un nombre entre 1 et 10 - Fonction RANDOM
+
+using System;
 
 namespace nombre_magique
 {
     class Program
     {
-        // DemanderNombre
-        // afficher : Rentrez un nombre
-        // tester si ce nombre est valide (convertion -> try/catch) -> ERREUR : ce nombre n'est pas valide
-        // reboucler tant que le nombre n'est pas valide
-        // considérer que 0 est invalide
-        // retourner la valeur (int)
-
         static int DemanderNombre(int min, int max)
         {
             int nombreUtilisateur = max + 1;
@@ -28,10 +23,6 @@ namespace nombre_magique
                     {
                         Console.WriteLine("ERREUR : le nombre doit être entre " + min + " et " + max);
                     }
-
-                    // tester si nombreUtilisateur entre min et max
-                    // ERREUR
-                    // nombreUtilisateur = 0 <- forcer à reboucler
                 }
                 catch
                 {
@@ -55,16 +46,12 @@ namespace nombre_magique
 
             int nbVies = 4;
 
-            while (nbVies > 0)  // tant qu'on a encore des vies
+            while (nbVies > 0)
             {
                 Console.WriteLine();
                 Console.WriteLine("Vies restantes : " + nbVies);
                 nombre = DemanderNombre(NOMBRE_MIN, NOMBRE_MAX);
 
-                // comparer nombre à NOMBRE_MAGIQUE
-                // 1 - le nombre magique est plus petit
-                // 2 - le nombre magique est plus grand
-                // 3 - Bravo, vous avez trouvé le nombre magique
                 if (NOMBRE_MAGIQUE > nombre)
                 {
                     Console.WriteLine("le nombre magique est plus grand");
@@ -75,7 +62,6 @@ namespace nombre_magique
                 }
                 else
                 {
-                    // j'ai trouvé le nombre magique
                     Console.WriteLine("Bravo, vous avez trouvé le nombre magique");
                     break;
                 }
@@ -86,18 +72,6 @@ namespace nombre_magique
             { 
                 Console.WriteLine("Vous avez perdu, le nombre magique était : " + NOMBRE_MAGIQUE);
             }
-            
-            
-
-            // Random
-
-            /*Random rand = new Random();
-            for (int i = 0; i< 10; i++)
-            {
-                int valeurAleatoire = rand.Next(1, 10000);
-                Console.WriteLine("Nombre aléatoire : " + valeurAleatoire);
-            }*/
-            
         }
     }
 }
