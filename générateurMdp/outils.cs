@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 
-
-// FormationCS.outils.DemanderNombrePositifNonNul
-
 namespace FormationCS
 {
     static class outils
@@ -16,13 +13,9 @@ namespace FormationCS
 
         public static int DemanderNombreEntre(string question, int min, int max, string messageErreurPresonnalise = null)
         {
-            // nombre = DemanderNombre(question)
-            // si le nombre est bien entre min et max -> ERREUR / boucler ...
-
             int nombre = DemanderNombre(question);
             if ((nombre >= min) && (nombre <= max))
             {
-                // valide
                 return nombre;
             }
             if (messageErreurPresonnalise == null)
@@ -41,11 +34,6 @@ namespace FormationCS
 
         public static int DemanderNombre(string question)
         {
-            // poser la question
-            // récupérer la réponse
-            // convertir
-            // gérer l'erreur de conversion
-            // boucler tant qu'on a pas recu une réponse valide (qui contient que des chiffres)
             while (true)
             {
                 Console.Write(question);
@@ -62,6 +50,5 @@ namespace FormationCS
                 }
             }
         }
-
     }
 }
